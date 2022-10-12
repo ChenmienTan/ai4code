@@ -1,0 +1,6 @@
+
+name: baseline
+args:
+  data:
+    max_data_size: 100
+    test_ratio: 0.1

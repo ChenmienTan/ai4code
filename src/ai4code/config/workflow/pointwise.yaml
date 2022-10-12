@@ -1,0 +1,23 @@
+
+name: pointwise
+args:
+  data:
+    max_data_size: 10
+    clean_text: false
+    add_markdown_context: true
+    remove_imports: false
+    markdown_context:
+      num_to_sample: 5
+      max_len: 3
+      sep: ' [SEP] '
+      clean: false
+  tokenizer:
+      max_len: 128
+  training:
+    learning_rate: 5e-5
+    lr_decay_rate: 1
+    per_device_train_batch_size: 32
+    per_device_eval_batch_size: 128
+    num_train_epochs: 1
+    num_workers: 0
+  model_name: distilbert-base-uncased

@@ -1,0 +1,23 @@
+
+defaults:
+  - env: local
+  - workflow: baseline
+
+  # disable logging by Hydra
+  - override hydra/job_logging: none
+  - override hydra/hydra_logging: none
+  - _self_
+
+hydra:
+  run:
+      dir: ${env.artifacts_path}
+
+workflow:
+  do_train: true
+  do_predict : true
+
+wandb:
+  enabled: true
+  project: ai4code
+
+git_hash: none

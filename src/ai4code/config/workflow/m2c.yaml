@@ -1,0 +1,31 @@
+name: m2c
+args:
+  tokenizer:
+    max_len: 256
+  data:
+    max_data_size: 10
+    clean_text: false
+    remove_imports: false
+    hard_negatives: true
+    add_boundary_code_cells: true
+    boundary_start_text: This is the beginning of the notebook
+    boundary_end_text: This is the end of the notebook
+    use_bow_context: false
+  training:
+    show_progress_bar: false
+    learning_rate: 5e-5
+    lr_decay_rate: 1
+    per_device_train_batch_size: 16
+    per_device_eval_batch_size: 128
+    num_train_epochs: 1
+    num_workers: 0
+    warmup: 0.1
+    eval_steps: 1000
+    evaluator: kendalltau
+  model_name: distilbert-base-uncased
+  model_head: default
+  asym_emb_size: 128
+  inference:
+    mode: softmax
+    softmax_temp: 60
+    produce_embs: false

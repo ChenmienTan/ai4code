@@ -1,0 +1,31 @@
+version: 1
+formatters:
+  simple:
+    format: '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+handlers:
+  console:
+    level: 'INFO'
+    class: logging.StreamHandler
+    formatter: simple
+    stream: ext://sys.stderr
+loggers:
+  '':
+    handlers: ['console']
+    level: WARNING
+    propagate: false
+  ai4code:
+    handlers: [ 'console' ]
+    level: DEBUG
+    propagate: false
+  src.ai4code:
+    handlers: [ 'console' ]
+    level: DEBUG
+    propagate: false
+  hydra:
+    handlers: [ 'console' ]
+    level: DEBUG
+    propagate: false
+root:
+  handlers: [console]
+
+disable_existing_loggers: true
